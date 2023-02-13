@@ -17,8 +17,8 @@ public class MemberService {
     //회원가입
     @Transactional
     public Long join(Member member) {
-        Member findMember = memberRepository.findMemberByUserId(member.getUserId());
-        validateDuplicateUserId(findMember);    //아이디 중복 검사
+
+        validateDuplicateUserId(member);    //아이디 중복 검사
         memberRepository.save(member);
 
         return member.getId();
