@@ -17,7 +17,7 @@ class MemberServiceTest {
     @Test
     void join() {
         Member member = new Member();
-        member.register("test1","test","123","01012345678");
+        member.register("test","test","123","01012345678");
 
         memberRepository.save(member);
     }
