@@ -18,6 +18,7 @@ class MemberServiceTest {
     void join() {
         Member member = new Member();
         member.register("test","test","123","01012345678");
+        member.register("test2","test2","123","01012345678");
 
         memberRepository.save(member);
     }
