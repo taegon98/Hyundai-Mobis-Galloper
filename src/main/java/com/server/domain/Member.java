@@ -21,14 +21,17 @@ public class Member {
     private String userId;
     private String password;
     private String telephone;
+    private String childName;
     private String token;
 
+
     //회원등록 생성자
-    public void register(String name, String userId, String password, String telephone) {
+    public void register(String name, String userId, String password, String telephone, String childName) {
         this.name = name;
         this.userId = userId;
         this.password = password;
         this.telephone = telephone;
+        this.childName = childName;
         this.token = UUID.randomUUID().toString();
     }
 }
