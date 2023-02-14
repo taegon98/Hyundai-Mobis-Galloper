@@ -25,8 +25,8 @@ class MemberServiceTest {
         Member member1 = new Member();
         Member member2 = new Member();
 
-        member1.register("test", "test", "test", "test","01012345678");
-        member2.register("test2", "test2", "test2", "test","0101234678");
+        member1.register("test", "test", "test","01012345678", "test");
+        member2.register("test2", "test2", "test2","0101234678", "test");
 
         memberService.join(member1);   //회원가입 테스트
         memberService.join(member2);
@@ -38,8 +38,8 @@ class MemberServiceTest {
         Member member1 = new Member();
         Member member2 = new Member();
 
-        member1.register("test", "test", "test", "test","01012345678");
-        member2.register("test2", "test2", "test2", "test","0101234678");
+        member1.register("test", "test", "test","01012345678", "test");
+        member2.register("test2", "test2", "test2","0101234678", "test");
 
         Member findMember1 = memberRepository.save(member1);    //회원가입 테스트
         Member findMember2 = memberRepository.save(member2);
@@ -60,8 +60,8 @@ class MemberServiceTest {
         Member member1 = new Member();
         Member member2 = new Member();
 
-        member1.register("test","test","test","test","01012345678");
-        member2.register("test","test","test","test","0101234678");
+        member1.register("test", "test", "test","01012345678", "test");
+        member2.register("test", "test", "test","0101234678", "test");
 
         memberService.join(member1);
 
@@ -75,7 +75,7 @@ class MemberServiceTest {
     void 로그인() {
         Member member = new Member();
 
-        member.register("test","test","1234","01012345678");
+        member.register("test", "test", "test","01012345678", "test");
         memberService.join(member);
 
         Assertions.assertThat(memberService.Login("test","1234")).isEqualTo(member);
