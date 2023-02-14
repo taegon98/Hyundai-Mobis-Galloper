@@ -1,12 +1,11 @@
 package com.server.domain;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -15,13 +14,16 @@ import java.util.UUID;
 public class Manager {
     @Id
     @GeneratedValue
-    @Column(name = "MEMBER_ID")
+    @Column(name = "MANAGER_ID")
     private Long id;
     private String name;
     private String userId;
     private String password;
     private String telephone;
     private String token;   //car_serial
+
+    @OneToMany(mappedBy = "manager",cascade = CascadeType.ALL)
+    private List<Member> members = new ArrayList<>();
 
     //회원등록 생성자
     public void register(String name, String userId, String password, String telephone) {
