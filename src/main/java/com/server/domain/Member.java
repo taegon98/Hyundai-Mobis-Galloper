@@ -1,11 +1,10 @@
 package com.server.domain;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.JoinColumnOrFormula;
+
 import java.util.UUID;
 
 @Entity
@@ -24,6 +23,9 @@ public class Member {
     private String childName;
     private String token;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="MANAGER_ID")
+    private Manager manager;
 
     //회원등록 생성자
     public void register(String name, String userId, String password, String telephone, String childName) {
