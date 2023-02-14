@@ -69,4 +69,15 @@ class MemberServiceTest {
             memberService.join(member2);    //중복 아이디 검증 테스트
         });
     }
+
+    @DisplayName("로그인 테스트")
+    @Test
+    void 로그인() {
+        Member member = new Member();
+
+        member.register("test","test","1234","01012345678");
+        memberService.join(member);
+
+        Assertions.assertThat(memberService.Login("test","1234")).isEqualTo(member);
+    }
 }
