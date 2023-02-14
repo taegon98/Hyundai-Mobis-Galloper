@@ -75,7 +75,7 @@ class MemberServiceTest {
     void 로그인() {
         Member member = new Member();
 
-        member.register("test","test","1234","01012345678");
+        member.register("test","test","1234","01012345678", "test");
         memberService.join(member);
 
         Assertions.assertThat(memberService.Login("test","1234")).isEqualTo(member);
