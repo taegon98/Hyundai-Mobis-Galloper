@@ -70,4 +70,15 @@ class ManagerServiceTest {
             managerService.join(manager2);    //중복 아이디 검증 테스트
         });
     }
+
+    @DisplayName("관리자 로그인 테스트")
+    @Test
+    void 로그인() {
+        Manager manager = new Manager();
+
+        manager.register("test","test","1234","01012345678");
+        managerService.join(manager);
+
+        Assertions.assertThat(managerService.Login("test","1234")).isEqualTo(manager);
+    }
 }

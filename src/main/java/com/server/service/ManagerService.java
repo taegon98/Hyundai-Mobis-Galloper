@@ -48,5 +48,13 @@ public class ManagerService {
     public Manager findByTokenId(String token) {
         return managerRepository.findMemberByToken(token);
     }
+
+    //로그인 검증
+    public Manager Login(String userId, String password) {
+        Manager findManager = managerRepository.findMemberByUserId(userId);
+
+        if (findManager.getPassword().equals(password)) return findManager;
+        else return null;
+    }
 }
 
