@@ -3,6 +3,7 @@ package com.server.service;
 import com.server.domain.Member;
 import com.server.repository.MemberRepository;
 import jakarta.transaction.Transactional;
+import jakarta.validation.constraints.Null;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -50,6 +51,14 @@ public class MemberService {
     //회원 단건 조회 by TOKEN
     public Member findByTokenId(String token) {
         return memberRepository.findMemberByToken(token);
+    }
+
+    //로그인 검증
+    public Member Login(String userId, String password) {
+        Member findMember = memberRepository.findMemberByUserId(userId);
+
+        if (findMember.getPassword().equals(password)) return findMember;
+        else return null;
     }
 }
 
