@@ -25,8 +25,8 @@ class MemberServiceTest {
         Member member1 = new Member();
         Member member2 = new Member();
 
-        member1.register("test","test","test","01012345678");
-        member2.register("test2","test2","test2","0101234678");
+        member1.register("test", "test", "test", "test","01012345678");
+        member2.register("test2", "test2", "test2", "test","0101234678");
 
         memberService.join(member1);   //회원가입 테스트
         memberService.join(member2);
@@ -38,8 +38,8 @@ class MemberServiceTest {
         Member member1 = new Member();
         Member member2 = new Member();
 
-        member1.register("test", "test", "test", "01012345678");
-        member2.register("test2", "test2", "test2", "0101234678");
+        member1.register("test", "test", "test", "test","01012345678");
+        member2.register("test2", "test2", "test2", "test","0101234678");
 
         Member findMember1 = memberRepository.save(member1);    //회원가입 테스트
         Member findMember2 = memberRepository.save(member2);
@@ -60,8 +60,8 @@ class MemberServiceTest {
         Member member1 = new Member();
         Member member2 = new Member();
 
-        member1.register("test","test","test","01012345678");
-        member2.register("test","test","test","0101234678");
+        member1.register("test","test","test","test","01012345678");
+        member2.register("test","test","test","test","0101234678");
 
         memberService.join(member1);
 
