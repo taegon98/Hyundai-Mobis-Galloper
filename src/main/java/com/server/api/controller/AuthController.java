@@ -11,6 +11,7 @@ import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.Errors;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,14 +23,14 @@ public class AuthController {
     private final MemberService memberService;
 
     @PostMapping("/login")
-    public ResponseEntity<MemberLoginResponse> login(@Validated @RequestBody MemberLoginRequest dto,
-                                                     BindingResult bindingResult, HttpServletRequest request) {
+    public ResponseEntity login(@RequestBody @Validated MemberLoginRequest dto,
+                                Errors errors, HttpServletRequest request) {
         String findPassword = dto.getPassword();
 
         Member member = memberService.Login(dto.getUserId(), dto.getPassword());
 
-        if (member.equals(null) || bindingResult.hasErrors()) {
-            return ResponseEntity.badRequest().body(new MemberLoginResponse(null, null, null,null));
+        if (member.equals(null) || errors.hasErrors()) {
+            return ResponseEntity.badRequest().body(errors);
         }
 
         HttpSession session = request.getSession();
@@ -39,7 +40,7 @@ public class AuthController {
     }
 
     @PostMapping("/logout")
-    public ResponseEntity<ResponseDto> logout(HttpServletRequest request) {
+    public ResponseEntity logout(HttpServletRequest request) {
         HttpSession session = request.getSession(false);
         if (session != null) {
             session.invalidate();
