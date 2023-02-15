@@ -1,5 +1,6 @@
 package com.server.service;
 
+import com.server.domain.Manager;
 import com.server.domain.Member;
 import com.server.repository.MemberRepository;
 import jakarta.transaction.Transactional;
@@ -59,6 +60,14 @@ public class MemberService {
 
         if (findMember.getPassword().equals(password)) return findMember;
         else return null;
+    }
+
+    //회원 정보 업데이트 (관리자 등록)
+    @Transactional
+    public void updateMember(String userId, Manager manager) {
+        Member findMember = memberRepository.findMemberByUserId(userId);
+
+        findMember.registerManager(manager);
     }
 }
 

@@ -38,4 +38,8 @@ public class Member {
         this.childName = childName;
         this.token = UUID.randomUUID().toString();
     }
+
+    public void registerManager(Manager manager) {
+        this.manager = manager;
+    }
 }

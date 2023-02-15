@@ -2,7 +2,10 @@ package com.server.api.controller;
 
 import com.server.api.ResponseDto;
 import com.server.api.dto.member.MemberSignUpRequest;
+import com.server.api.dto.member.RegisterManagerRequest;
+import com.server.domain.Manager;
 import com.server.domain.Member;
+import com.server.service.ManagerService;
 import com.server.service.MemberService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -18,6 +21,7 @@ import org.springframework.web.bind.annotation.*;
 public class MemberApiController {
 
     private final MemberService memberService;
+    private final ManagerService managerService;
 
     //회원등록
     @PostMapping("/save")
@@ -32,5 +36,18 @@ public class MemberApiController {
         memberService.join(member);
 
         return ResponseEntity.ok().body(new ResponseDto("회원가입이 완료되었습니다."));
+    }
+
+    @PutMapping("/register/manager/{id}")
+    public ResponseEntity registerManager(@PathVariable String id,
+                                          @RequestBody @Validated RegisterManagerRequest request, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            return ResponseEntity.badRequest().body(bindingResult);
+        }
+
+        Manager findManager = managerService.findByUserId(request.getUserId());
+        memberService.updateMember(id, findManager);
+
+        return ResponseEntity.ok().body(new ResponseDto("관리자 등록이 완료되었습니다."));
     }
 }
