@@ -23,6 +23,8 @@ public class Member {
     private String childName;
     private String token;
 
+    private boolean status;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="MANAGER_ID")
     private Manager manager;
