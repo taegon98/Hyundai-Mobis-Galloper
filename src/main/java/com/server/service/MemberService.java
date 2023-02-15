@@ -63,6 +63,7 @@ public class MemberService {
     }
 
     //회원 정보 업데이트 (관리자 등록)
+    @Transactional
     public void updateMember(String userId, Manager manager) {
         Member findMember = memberRepository.findMemberByUserId(userId);
 
