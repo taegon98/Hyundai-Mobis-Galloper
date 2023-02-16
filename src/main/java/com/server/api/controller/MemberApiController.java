@@ -5,6 +5,7 @@ import com.server.api.dto.member.MemberSignUpRequest;
 import com.server.api.dto.member.RegisterManagerRequest;
 import com.server.domain.Manager;
 import com.server.domain.Member;
+import com.server.exception.MethodArgumentNotValidException;
 import com.server.service.ManagerService;
 import com.server.service.MemberService;
 import lombok.RequiredArgsConstructor;
@@ -27,7 +28,7 @@ public class MemberApiController {
     @PostMapping("/save")
     public ResponseEntity saveMember(@RequestBody @Validated MemberSignUpRequest request, Errors errors) {
         if (errors.hasErrors()) {
-            return ResponseEntity.badRequest().body(errors);
+            throw new MethodArgumentNotValidException("필드 값 오류");
         }
 
         Member member = new Member();
