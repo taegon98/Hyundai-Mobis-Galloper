@@ -2,6 +2,7 @@ package com.server.api.controller;
 
 import com.server.api.ResponseDto;
 import com.server.api.dto.manager.ManagerSignUpRequest;
+import com.server.api.dto.manager.MemberListResponse;
 import com.server.api.dto.member.MemberSignUpRequest;
 import com.server.domain.Manager;
 import com.server.domain.Member;
@@ -14,6 +15,9 @@ import org.springframework.validation.Errors;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @RestController
 @RequestMapping("/manager")
 @RequiredArgsConstructor
@@ -23,6 +27,7 @@ public class ManagerApiController {
     private final ManagerService managerService;
     private final MemberService memberService;
 
+    //관리자 회원가입
     @PostMapping("/save")
     public ResponseEntity saveManager(@RequestBody @Validated ManagerSignUpRequest request, Errors errors) {
         if (errors.hasErrors()) {
@@ -34,5 +39,16 @@ public class ManagerApiController {
         managerService.join(manager);
 
         return ResponseEntity.ok().body(new ResponseDto("회원가입이 완료되었습니다."));
+    }
+
+    //관리자에게 속한 일반회원들 반환
+    @GetMapping("/members/{token}")
+    public ResponseEntity getMembers(@PathVariable String token) {
+        Manager manager = managerService.findByTokenId(token);
+
+        List<Member> members = managerService.findMembers(manager);
+        List<MemberListResponse> memberListResponses = members.stream().map(MemberListResponse::toDTO).collect(Collectors.toList());
+
+        return ResponseEntity.ok().body(memberListResponses);
     }
 }
