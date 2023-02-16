@@ -38,15 +38,15 @@ public class MemberApiController {
         return ResponseEntity.ok().body(new ResponseDto("회원가입이 완료되었습니다."));
     }
 
-    @PutMapping("/register/manager/{id}")
-    public ResponseEntity registerManager(@PathVariable String id,
+    @PutMapping("/regManager/{userId}")
+    public ResponseEntity registerManager(@PathVariable String userId,
                                           @RequestBody @Validated RegisterManagerRequest request, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             return ResponseEntity.badRequest().body(bindingResult);
         }
 
         Manager findManager = managerService.findByUserId(request.getUserId());
-        memberService.updateMember(id, findManager);
+        memberService.updateMember(userId, findManager);
 
         return ResponseEntity.ok().body(new ResponseDto("관리자 등록이 완료되었습니다."));
     }

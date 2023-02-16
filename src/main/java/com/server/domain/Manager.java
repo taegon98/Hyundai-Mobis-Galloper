@@ -22,8 +22,8 @@ public class Manager {
     private String telephone;
     private String token;   //car_serial
 
-    @OneToMany(mappedBy = "manager",cascade = CascadeType.ALL)
     @ElementCollection
+    @OneToMany(mappedBy = "manager",cascade = CascadeType.ALL)
     private List<Member> members = new ArrayList<>();
 
     //회원등록 생성자
