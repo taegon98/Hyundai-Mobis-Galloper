@@ -38,4 +38,14 @@ public class Member {
         this.childName = childName;
         this.token = UUID.randomUUID().toString();
     }
+
+    //승차 버튼
+    public void geton() {
+        this.status = true;
+    }
+
+    //하차 버튼
+    public void getoff() {
+        this.status = false;
+    }
 }
