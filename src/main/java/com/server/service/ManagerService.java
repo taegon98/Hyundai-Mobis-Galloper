@@ -56,5 +56,11 @@ public class ManagerService {
         if (findManager.getPassword().equals(password)) return findManager;
         else return null;
     }
+
+    //관리자가 관리하는 회원들 반환
+    public List<Member> findMembers(Manager manager) {
+        List<Member> members = manager.getMembers();
+        return members;
+    }
 }
 
