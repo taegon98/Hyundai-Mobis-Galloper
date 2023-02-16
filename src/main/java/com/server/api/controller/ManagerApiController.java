@@ -51,4 +51,12 @@ public class ManagerApiController {
 
         return ResponseEntity.ok().body(memberListResponses);
     }
+
+    @PostMapping("/getoff/{token}")
+    public ResponseEntity getOff(@PathVariable String token) {
+        Member member = memberService.findByTokenId(token);
+
+        member.getoff();
+        return ResponseEntity.ok().body(new ResponseDto("하차 완료"));
+    }
 }
