@@ -1,6 +1,7 @@
 package com.server.api.controller;
 
 import com.server.api.ResponseDto;
+import com.server.api.dto.ardu.FingerPrintRequest;
 import com.server.api.dto.manager.ManagerSignUpRequest;
 import com.server.api.dto.manager.MemberListResponse;
 import com.server.api.dto.member.MemberSignUpRequest;
@@ -12,6 +13,7 @@ import com.server.service.MemberService;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindingResult;
 import org.springframework.validation.Errors;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -52,7 +54,6 @@ public class ManagerApiController {
 
         return ResponseEntity.ok().body(memberListResponses);
     }
-
     @PostMapping("/fpregister/geton/{token}")
     public ResponseEntity getOn(@PathVariable String token) {
         Member member = memberService.findByTokenId(token);
@@ -67,5 +68,16 @@ public class ManagerApiController {
 
         member.getOff();
         return ResponseEntity.ok().body(new ResponseDto("하차 완료"));
+    }
+
+    @PostMapping("/fpreregister/geton")
+    public void getOnByFp(@RequestBody @Validated FingerPrintRequest request, BindingResult bindingResult) {
+        if (bindingResult.hasFieldErrors()) {
+            throw new MethodArgumentNotValidException("fid 값이 존재 하지 않음");
+        }
+        Member member = memberService.findByFid(request.getFid());
+        member.getOn();
+
+        return;
     }
 }

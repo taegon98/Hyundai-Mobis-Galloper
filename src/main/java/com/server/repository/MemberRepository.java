@@ -18,6 +18,9 @@ public interface MemberRepository extends JpaRepository<Member, Integer> {
     //회원 단건 조회 by USERID
     Member findMemberByUserId(String userId);
 
+    //회원 단건 조회 by FID
+    Member findMemberByFid(int fid);
+
     //전체 회원 조회
     List<Member> findMembersById(Long id);
 
