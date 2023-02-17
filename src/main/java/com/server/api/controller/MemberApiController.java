@@ -43,7 +43,7 @@ public class MemberApiController {
     public ResponseEntity registerManager(@PathVariable String userId,
                                           @RequestBody @Validated RegisterManagerRequest request, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
-            return ResponseEntity.badRequest().body(bindingResult);
+            throw new MethodArgumentNotValidException("필드 값 오류");
         }
 
         Manager findManager = managerService.findByUserId(request.getUserId());

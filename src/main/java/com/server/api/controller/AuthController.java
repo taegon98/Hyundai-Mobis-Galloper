@@ -8,6 +8,7 @@ import com.server.api.dto.member.MemberLoginResponse;
 import com.server.domain.Manager;
 import com.server.domain.Member;
 import com.server.domain.SessionConst;
+import com.server.exception.MethodArgumentNotValidException;
 import com.server.service.ManagerService;
 import com.server.service.MemberService;
 import jakarta.servlet.http.HttpServletRequest;
@@ -34,7 +35,7 @@ public class AuthController {
         Member member = memberService.Login(dto.getUserId(), dto.getPassword());
 
         if (member.equals(null) || bindingResult.hasErrors()) {
-            return ResponseEntity.badRequest().body(bindingResult);
+            throw new MethodArgumentNotValidException("필드 값 오류");
         }
 
         HttpSession session = request.getSession();
@@ -61,7 +62,7 @@ public class AuthController {
         Manager manager = managerService.Login(dto.getUserId(), dto.getPassword());
 
         if (manager.equals(null) || bindingResult.hasErrors()) {
-            return ResponseEntity.badRequest().body(bindingResult);
+            throw new MethodArgumentNotValidException("필드 값 오류");
         }
 
         HttpSession session = request.getSession();
