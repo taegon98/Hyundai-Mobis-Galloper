@@ -22,8 +22,9 @@ public class Member {
     private String telephone;
     private String childName;
     private String token;
-
     private boolean status;
+
+    private int fid;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="MANAGER_ID")
@@ -36,6 +37,7 @@ public class Member {
         this.password = password;
         this.telephone = telephone;
         this.childName = childName;
+        this.fid = 0;
         this.token = UUID.randomUUID().toString();
     }
 
