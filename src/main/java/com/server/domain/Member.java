@@ -44,6 +44,10 @@ public class Member {
     public void registerManager(Manager manager) {
         this.manager = manager;
     }
+
+    public void registerFingerprint(int fid) {
+        this.fid = fid;
+    }
     //승차 버튼
     public void getOn() {
         this.status = true;
@@ -52,6 +56,5 @@ public class Member {
     //하차 버튼
     public void getOff() {
         this.status = false;
-
     }
 }

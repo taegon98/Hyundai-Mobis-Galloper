@@ -1,10 +1,12 @@
 package com.server.api.controller;
 
 import com.server.api.dto.ardu.ArduLoginResponse;
+import com.server.api.dto.ardu.ArduRegisterRequest;
 import com.server.api.dto.member.MemberLoginRequest;
 import com.server.api.dto.member.MemberLoginResponse;
 import com.server.domain.Member;
 import com.server.domain.SessionConst;
+import com.server.exception.MethodArgumentNotValidException;
 import com.server.service.ManagerService;
 import com.server.service.MemberService;
 import jakarta.servlet.http.HttpServletRequest;
@@ -36,5 +38,15 @@ public class ArduinoController {
         } else {
             return ResponseEntity.ok().body(new ArduLoginResponse(1));
         }
+    }
+
+    @PostMapping("/member/regFinger")
+    public void regFingerprint(@RequestBody @Validated ArduRegisterRequest request, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            throw new MethodArgumentNotValidException("필드 값 오류");
+        }
+        Member member = memberService.findByUserId(request.getUserId());
+        member.registerFingerprint(request.getFid());
+        return;
     }
 }
