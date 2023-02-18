@@ -1,5 +1,6 @@
 package com.server.api.controller;
 
+import com.server.api.ResponseDto;
 import com.server.api.dto.ardu.ArduLoginResponse;
 import com.server.api.dto.ardu.ArduRegisterRequest;
 import com.server.api.dto.member.MemberLoginRequest;
@@ -41,12 +42,12 @@ public class ArduinoController {
     }
 
     @PostMapping("/member/regFinger")
-    public void regFingerprint(@RequestBody @Validated ArduRegisterRequest request, BindingResult bindingResult) {
+    public ResponseEntity regFingerprint(@RequestBody @Validated ArduRegisterRequest request, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             throw new MethodArgumentNotValidException("필드 값 오류");
         }
         Member member = memberService.findByUserId(request.getUserId());
         memberService.updateFid(member, request.getFid());
-        return;
+        return ResponseEntity.ok().body(new ResponseDto("fid 업데이트 완료"));
     }
 }
