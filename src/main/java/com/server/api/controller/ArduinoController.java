@@ -46,7 +46,7 @@ public class ArduinoController {
             throw new MethodArgumentNotValidException("필드 값 오류");
         }
         Member member = memberService.findByUserId(request.getUserId());
-        member.registerFingerprint(request.getFid());
+        memberService.updateFid(member, request.getFid());
         return;
     }
 }

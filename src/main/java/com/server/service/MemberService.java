@@ -70,6 +70,11 @@ public class MemberService {
         findMember.registerManager(manager);
     }
 
+    @Transactional
+    public void updateFid(Member member, int fid) {
+        member.registerFingerprint(fid);
+        return;
+    }
     //회원 단건 조회 by FID
     public Member findByFid(int fid) {return memberRepository.findMemberByFid(fid); }
 }

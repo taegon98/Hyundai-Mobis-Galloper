@@ -10,5 +10,5 @@ public class ArduRegisterRequest {
     private String userId;
 
     @NotBlank(message = "필수 값 입니다.")
-    private int fid;
+    private Integer fid;
 }
