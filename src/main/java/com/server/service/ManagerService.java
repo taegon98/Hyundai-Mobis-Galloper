@@ -62,5 +62,11 @@ public class ManagerService {
         List<Member> members = manager.getMembers();
         return members;
     }
+
+    @Transactional
+    public void updateStatus(Member member, boolean flag) {
+        if (flag) member.getOn();
+        else member.getOff();
+    }
 }
 

@@ -4,17 +4,14 @@ import com.server.api.ResponseDto;
 import com.server.api.dto.ardu.FingerPrintRequest;
 import com.server.api.dto.manager.ManagerSignUpRequest;
 import com.server.api.dto.manager.MemberListResponse;
-import com.server.api.dto.member.MemberSignUpRequest;
 import com.server.domain.Manager;
 import com.server.domain.Member;
 import com.server.exception.MethodArgumentNotValidException;
 import com.server.service.ManagerService;
 import com.server.service.MemberService;
-import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.Errors;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -32,8 +29,8 @@ public class ManagerApiController {
 
     //관리자 회원가입
     @PostMapping("/save")
-    public ResponseEntity saveManager(@RequestBody @Validated ManagerSignUpRequest request, Errors errors) {
-        if (errors.hasErrors()) {
+    public ResponseEntity saveManager(@RequestBody @Validated ManagerSignUpRequest request, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
             throw new MethodArgumentNotValidException("필드 값 오류");
         }
         Manager manager = new Manager();
@@ -54,11 +51,12 @@ public class ManagerApiController {
 
         return ResponseEntity.ok().body(memberListResponses);
     }
+
     @PostMapping("/fpregister/geton/{token}")
     public ResponseEntity getOn(@PathVariable String token) {
         Member member = memberService.findByTokenId(token);
 
-        member.getOn();
+        managerService.updateStatus(member, true);
         return ResponseEntity.ok().body(new ResponseDto("승차 완료"));
     }
 
@@ -66,7 +64,7 @@ public class ManagerApiController {
     public ResponseEntity getOff(@PathVariable String token) {
         Member member = memberService.findByTokenId(token);
 
-        member.getOff();
+        managerService.updateStatus(member,false);
         return ResponseEntity.ok().body(new ResponseDto("하차 완료"));
     }
 
@@ -76,7 +74,7 @@ public class ManagerApiController {
             throw new MethodArgumentNotValidException("fid 값이 존재 하지 않음");
         }
         Member member = memberService.findByFid(request.getFid());
-        member.getOn();
+        managerService.updateStatus(member,true);
 
         return;
     }

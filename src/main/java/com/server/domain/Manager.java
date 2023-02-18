@@ -23,7 +23,7 @@ public class Manager {
     private String token;   //car_serial
 
     @ElementCollection
-    @OneToMany(mappedBy = "manager",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "manager", fetch = FetchType.LAZY, orphanRemoval = true, cascade = CascadeType.ALL)
     private List<Member> members = new ArrayList<>();
 
     //회원등록 생성자
