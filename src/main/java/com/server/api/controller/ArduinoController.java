@@ -32,7 +32,7 @@ public class ArduinoController {
 
         Member member = memberService.Login(dto.getUserId(), dto.getPassword());
 
-        if (member.equals(null)) {
+        if (member == null) {
             return ResponseEntity.ok().body(new ArduLoginResponse(-1));
         } else if (member.getFid() == 0) {
             return ResponseEntity.ok().body(new ArduLoginResponse(128));
@@ -46,6 +46,7 @@ public class ArduinoController {
         if (bindingResult.hasErrors()) {
             throw new MethodArgumentNotValidException("필드 값 오류");
         }
+
         Member member = memberService.findByUserId(request.getUserId());
         memberService.updateFid(member, request.getFid());
         return ResponseEntity.ok().body(new ResponseDto("fid 업데이트 완료"));

@@ -9,6 +9,7 @@ import com.server.domain.Manager;
 import com.server.domain.Member;
 import com.server.domain.SessionConst;
 import com.server.exception.MethodArgumentNotValidException;
+import com.server.exception.VerifyException;
 import com.server.service.ManagerService;
 import com.server.service.MemberService;
 import jakarta.servlet.http.HttpServletRequest;
@@ -34,7 +35,10 @@ public class AuthController {
 
         Member member = memberService.Login(dto.getUserId(), dto.getPassword());
 
-        if (member.equals(null) || bindingResult.hasErrors()) {
+        if (member == null) {
+            throw new VerifyException("아이디 비밀번호 불일치");
+        }
+        if (bindingResult.hasErrors()) {
             throw new MethodArgumentNotValidException("필드 값 오류");
         }
 
@@ -61,7 +65,10 @@ public class AuthController {
 
         Manager manager = managerService.Login(dto.getUserId(), dto.getPassword());
 
-        if (manager.equals(null) || bindingResult.hasErrors()) {
+        if (manager == null) {
+            throw new VerifyException("아이디 비밀번호 불일치");
+        }
+        if (bindingResult.hasErrors()) {
             throw new MethodArgumentNotValidException("필드 값 오류");
         }
 

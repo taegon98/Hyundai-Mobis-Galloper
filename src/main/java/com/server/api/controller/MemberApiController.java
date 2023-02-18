@@ -5,6 +5,7 @@ import com.server.api.dto.member.MemberSignUpRequest;
 import com.server.api.dto.member.RegisterManagerRequest;
 import com.server.domain.Manager;
 import com.server.domain.Member;
+import com.server.exception.ExistenceException;
 import com.server.exception.MethodArgumentNotValidException;
 import com.server.service.ManagerService;
 import com.server.service.MemberService;
@@ -47,6 +48,10 @@ public class MemberApiController {
         }
 
         Manager findManager = managerService.findByUserId(request.getUserId());
+
+        if (findManager == null) {
+            throw new ExistenceException("존재하지 않는 관리자입니다.");
+        }
         memberService.updateMember(userId, findManager);
 
         return ResponseEntity.ok().body(new ResponseDto("관리자 등록이 완료되었습니다."));

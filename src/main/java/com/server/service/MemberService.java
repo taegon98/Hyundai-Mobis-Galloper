@@ -2,6 +2,7 @@ package com.server.service;
 
 import com.server.domain.Manager;
 import com.server.domain.Member;
+import com.server.exception.ExistenceException;
 import com.server.repository.MemberRepository;
 import jakarta.transaction.Transactional;
 import jakarta.validation.constraints.Null;
@@ -30,7 +31,7 @@ public class MemberService {
     private void validateDuplicateUserId(Member member) {
         boolean usernameDuplicate = memberRepository.existsByUserId(member.getUserId());
         if (usernameDuplicate) {
-            throw new IllegalStateException("동일한 아이디가 이미 존재합니다.");
+            throw new ExistenceException("동일한 아이디가 이미 존재 합니다.");
         }
     }
 
@@ -58,6 +59,7 @@ public class MemberService {
     public Member Login(String userId, String password) {
         Member findMember = memberRepository.findMemberByUserId(userId);
 
+        if (findMember == null) return null;
         if (findMember.getPassword().equals(password)) return findMember;
         else return null;
     }
