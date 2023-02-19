@@ -4,6 +4,7 @@ import com.server.api.ResponseDto;
 import com.server.api.dto.ardu.FingerPrintRequest;
 import com.server.api.dto.manager.ManagerSignUpRequest;
 import com.server.api.dto.manager.MemberListResponse;
+import com.server.api.dto.member.StatusResponse;
 import com.server.domain.Manager;
 import com.server.domain.Member;
 import com.server.exception.MethodArgumentNotValidException;
@@ -57,7 +58,7 @@ public class ManagerApiController {
         Member member = memberService.findByTokenId(token);
 
         managerService.updateStatus(member, true);
-        return ResponseEntity.ok().body(new ResponseDto("승차 완료"));
+        return ResponseEntity.ok().body(new StatusResponse(true));
     }
 
     @PostMapping("/fpregister/getoff/{token}")
@@ -65,7 +66,7 @@ public class ManagerApiController {
         Member member = memberService.findByTokenId(token);
 
         managerService.updateStatus(member,false);
-        return ResponseEntity.ok().body(new ResponseDto("하차 완료"));
+        return ResponseEntity.ok().body(new StatusResponse(false));
     }
 
     @PostMapping("/fpreregister/geton")

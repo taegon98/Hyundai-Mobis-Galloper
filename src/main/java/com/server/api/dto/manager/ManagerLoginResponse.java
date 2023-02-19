@@ -4,15 +4,10 @@ import lombok.Data;
 
 @Data
 public class ManagerLoginResponse {
-
-    private String userId;
     private String name;
-    private String token;
 
-    public ManagerLoginResponse(String userId, String name, String token) {
-        this.userId = userId;
+    public ManagerLoginResponse(String name) {
         this.name = name;
-        this.token = token;
     }
 
 }
