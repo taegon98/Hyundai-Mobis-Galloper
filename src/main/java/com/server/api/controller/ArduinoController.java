@@ -4,14 +4,10 @@ import com.server.api.ResponseDto;
 import com.server.api.dto.ardu.ArduLoginResponse;
 import com.server.api.dto.ardu.ArduRegisterRequest;
 import com.server.api.dto.member.MemberLoginRequest;
-import com.server.api.dto.member.MemberLoginResponse;
 import com.server.domain.Member;
-import com.server.domain.SessionConst;
 import com.server.exception.MethodArgumentNotValidException;
-import com.server.service.ManagerService;
 import com.server.service.MemberService;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpSession;
+
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;

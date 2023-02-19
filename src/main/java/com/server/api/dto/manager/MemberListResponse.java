@@ -3,9 +3,6 @@ package com.server.api.dto.manager;
 import com.server.domain.Manager;
 import com.server.domain.Member;
 import lombok.Data;
-
-import java.util.List;
-
 @Data
 public class MemberListResponse {
     private String name;

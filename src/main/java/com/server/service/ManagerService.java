@@ -4,11 +4,10 @@ import com.server.domain.Manager;
 import com.server.domain.Member;
 import com.server.exception.ExistenceException;
 import com.server.repository.ManagerRepository;
-import com.server.repository.MemberRepository;
-import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
