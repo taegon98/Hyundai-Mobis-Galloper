@@ -33,7 +33,7 @@ public class ArduinoController {
         } else if (member.getFid() == 0) {
             return ResponseEntity.ok().body(new ArduLoginResponse(128));
         } else {
-            return ResponseEntity.ok().body(new ArduLoginResponse(1));
+            return ResponseEntity.ok().body(new ArduLoginResponse(member.getFid()));
         }
     }
 
