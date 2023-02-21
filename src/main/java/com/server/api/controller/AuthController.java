@@ -13,6 +13,7 @@ import com.server.exception.VerifyException;
 import com.server.service.ManagerService;
 import com.server.service.MemberService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
@@ -24,6 +25,7 @@ import javax.servlet.http.HttpSession;
 @RestController
 @RequiredArgsConstructor
 @CrossOrigin
+@Slf4j
 public class AuthController {
 
     private final MemberService memberService;
@@ -76,7 +78,7 @@ public class AuthController {
         HttpSession session = request.getSession();
         session.setAttribute(SessionConst.LOGIN_MANAGER, manager);
 
-        return ResponseEntity.ok().body(new ManagerLoginResponse(manager.getName()));
+        return ResponseEntity.ok().body(new ManagerLoginResponse(manager.getName(), manager.getToken()));
     }
 
     @PostMapping("/manager/logout")

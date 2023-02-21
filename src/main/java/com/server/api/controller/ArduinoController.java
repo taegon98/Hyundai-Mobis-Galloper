@@ -43,8 +43,8 @@ public class ArduinoController {
             throw new MethodArgumentNotValidException("필드 값 오류");
         }
 
-        Member member = memberService.findByUserId(request.getUserId());
-        memberService.updateFid(member, request.getFid());
+        Member member = memberService.findByUserId(request.getUserId());    //해당 유저의 아이디(Unique)를 통해 회원 찾기
+        memberService.updateFid(member, request.getFid());  //해당 유저의 fid (지문 값) 업데이트
         return ResponseEntity.ok().body(new ResponseDto("fid 업데이트 완료"));
     }
 }

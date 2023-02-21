@@ -9,12 +9,14 @@ public class MemberListResponse {
     private String userId;
     private String telephone;
     private String childName;
+    private String token;
 
     public MemberListResponse(Member member) {
         this.name = member.getName();
         this.userId = member.getUserId();
         this.telephone = member.getTelephone();
         this.childName = member.getChildName();
+        this.token = member.getToken();
     }
 
     public static MemberListResponse toDTO(Member member) {

@@ -27,7 +27,7 @@ public class MemberApiController {
 
     //회원등록
     @PostMapping("/save")
-    public ResponseEntity saveMember(@RequestBody @Validated MemberSignUpRequest request, Errors errors) {
+    public ResponseEntity<ResponseDto> saveMember(@RequestBody @Validated MemberSignUpRequest request, Errors errors) {
         if (errors.hasErrors()) {
             throw new MethodArgumentNotValidException("필드 값 오류");
         }
