@@ -21,4 +21,7 @@ public class MemberSignUpRequest {
 
     @NotBlank(message = "자녀의 이름을 입력해주세요")
     private String childName;
+
+    @NotBlank(message = "자녀의 혈액형을 입력해주세요")
+    private String b_type;
 }
