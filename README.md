@@ -31,8 +31,6 @@
 * 사고 발생 시 버스에 부착된 QR코드를 통해 탑승자 정보를 알 수 있게 하여 구조 시 구조대원으로 하여금 탑승자 인적사항 파악과 구조를 용이하게 한다.
 ---
 6. 기술 스택
-
-
-
-
-
+* S/W-Front-end : JavaScript, React
+* S/W-Back-end : Java, Spring boot, JPA
+* H/W : Arduino IDE
