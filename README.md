@@ -35,4 +35,4 @@
 * S/W-Back-end : Java, Spring boot, JPA
 * H/W : Arduino IDE
 * ERD
-<img src="https://user-images.githubusercontent.com/102223636/220561244-ab2b870e-256d-4bb4-a829-6e69b08f2f00.png" width="100" height="100"/>
+<img src="https://user-images.githubusercontent.com/102223636/220561244-ab2b870e-256d-4bb4-a829-6e69b08f2f00.png" width="200" height="200"/>
