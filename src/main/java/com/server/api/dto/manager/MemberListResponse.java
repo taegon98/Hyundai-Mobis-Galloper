@@ -10,13 +10,14 @@ public class MemberListResponse {
     private String telephone;
     private String childName;
     private String token;
-
+    private String b_type;
     public MemberListResponse(Member member) {
         this.name = member.getName();
         this.userId = member.getUserId();
         this.telephone = member.getTelephone();
         this.childName = member.getChildName();
         this.token = member.getToken();
+        this.b_type = member.getB_type();
     }
 
     public static MemberListResponse toDTO(Member member) {
