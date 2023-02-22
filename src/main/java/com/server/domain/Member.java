@@ -23,6 +23,7 @@ public class Member {
     private String password;
     private String telephone;
     private String childName;
+    private String b_type;
     private String token;
     private boolean status;
 
@@ -33,12 +34,13 @@ public class Member {
     private Manager manager;
 
     //회원등록 생성자
-    public void register(String name, String userId, String password, String telephone, String childName) {
+    public void register(String name, String userId, String password, String telephone, String childName, String b_type) {
         this.name = name;
         this.userId = userId;
         this.password = password;
         this.telephone = telephone;
         this.childName = childName;
+        this.b_type = b_type;
         this.fid = 0;
         this.token = UUID.randomUUID().toString();
     }

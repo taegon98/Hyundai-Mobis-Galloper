@@ -34,7 +34,7 @@ public class MemberApiController {
 
         Member member = new Member();
 
-        member.register(request.getName(), request.getUserId(), request.getPassword(), request.getTelephone(), request.getChildName());
+        member.register(request.getName(), request.getUserId(), request.getPassword(), request.getTelephone(), request.getChildName(), request.getB_type());
         memberService.join(member);
 
         return ResponseEntity.ok().body(new ResponseDto("회원가입이 완료되었습니다."));
