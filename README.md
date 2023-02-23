@@ -1,5 +1,6 @@
 ## 1. 서비스 소개
 <img src="https://user-images.githubusercontent.com/102223636/220829672-61f0b61a-7ea9-46af-b88f-e313ef027550.png" width="300" height="300"/>
+
 * 한줄 소개 : 어린이용 통학버스 탑승자 자동 관리 및 자녀 등하교 안심 서비스 <br>
 * 소개 영상 URL : <br>
 
