@@ -44,19 +44,19 @@
 ---
 ## 6. 기술 스택
 * Backend - Spring
-Java 11
-SpringBoot 2.7.7
-DB : Maria db 10.2.32
-IDE : Intellij IDE
+  - Java 11
+  - SpringBoot 2.7.7
+  - DB : Maria db 10.2.32
+  - IDE : Intellij IDE
 
 * Frontend
-React : 5.0.1
-JavaScript
-IDE : VScode
+  - React : 5.0.1
+  - JavaScript
+  - IDE : VScode
 
 * CI/CD
-AWS lightsail
-AWS rds
+  - AWS lightsail
+  - AWS rds
 
 * H/W : Arduino IDE
 * ERD
