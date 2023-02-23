@@ -48,7 +48,8 @@ public class AuthController {
         HttpSession session = request.getSession();
         session.setAttribute(SessionConst.LOGIN_MEMBER, member);
 
-        return ResponseEntity.ok().body(new MemberLoginResponse(member.getName(), member.getChildName(), member.getToken()));
+        return ResponseEntity.ok().body(new MemberLoginResponse(member.getName(), member.getChildName(),
+                member.getToken(), member.getFlag(), member.getUserId()));
     }
 
     @PostMapping("/member/logout")
@@ -78,7 +79,7 @@ public class AuthController {
         HttpSession session = request.getSession();
         session.setAttribute(SessionConst.LOGIN_MANAGER, manager);
 
-        return ResponseEntity.ok().body(new ManagerLoginResponse(manager.getName(), manager.getToken()));
+        return ResponseEntity.ok().body(new ManagerLoginResponse(manager.getName(), manager.getToken(), manager.getFlag(), manager.getUserId()));
     }
 
     @PostMapping("/manager/logout")

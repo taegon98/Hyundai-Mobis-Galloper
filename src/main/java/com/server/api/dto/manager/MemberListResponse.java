@@ -11,6 +11,8 @@ public class MemberListResponse {
     private String childName;
     private String token;
     private String b_type;
+
+    private boolean status;
     public MemberListResponse(Member member) {
         this.name = member.getName();
         this.userId = member.getUserId();
@@ -18,6 +20,7 @@ public class MemberListResponse {
         this.childName = member.getChildName();
         this.token = member.getToken();
         this.b_type = member.getB_type();
+        this.status = member.isStatus();
     }
 
     public static MemberListResponse toDTO(Member member) {

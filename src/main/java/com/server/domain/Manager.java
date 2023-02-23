@@ -21,6 +21,7 @@ public class Manager {
     private String password;
     private String telephone;
     private String token;   //car_serial
+    private int flag;
 
     @ElementCollection
     @OneToMany(mappedBy = "manager", fetch = FetchType.LAZY, orphanRemoval = true, cascade = CascadeType.ALL)
@@ -32,6 +33,7 @@ public class Manager {
         this.userId = userId;
         this.password = password;
         this.telephone = telephone;
+        this.flag = 1;
         this.token = UUID.randomUUID().toString();
     }
 }

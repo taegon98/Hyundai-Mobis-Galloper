@@ -2,10 +2,6 @@ package com.server.domain;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.JoinColumnOrFormula;
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
-
 import javax.persistence.*;
 import java.util.UUID;
 
@@ -29,6 +25,8 @@ public class Member {
 
     private int fid;
 
+    private int flag;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="MANAGER_ID")
     private Manager manager;
@@ -42,6 +40,7 @@ public class Member {
         this.childName = childName;
         this.b_type = b_type;
         this.fid = 0;
+        this.flag = 0;
         this.token = UUID.randomUUID().toString();
     }
 
