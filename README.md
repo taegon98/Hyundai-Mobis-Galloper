@@ -73,7 +73,8 @@
   - AWS rds
 
 * H/W - Arduino IDE
-  - 보드 : Arduino Uno R3
+  - 보드
+    - Arduino Uno R3
   - 모듈
     - esp8266(와이파이)
     - as608(지문 센서)
