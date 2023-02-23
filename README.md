@@ -3,7 +3,7 @@
 
 * 서비스명 : 붕붕(BOONG-BOONG)
 * 한줄 소개 : 어린이용 통학버스 탑승자 자동 관리 및 자녀 등하교 안심 서비스 <br>
-* 소개 영상 URL : <br>
+* [🔗소개 영상 URL](https://www.notion.so/API-f49199c0d8fb492a9c6a16155d655ef1) 
 
 ---
 
