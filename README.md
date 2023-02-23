@@ -6,7 +6,11 @@
 ## 2. 프로젝트 진행 기간
 * 멋쟁이사자처럼 X 현대모비스 Mobility SW Hackathon (2주, 2022-07-11 ~ 2022-08-19)
 * 개발 기간 : 2023.2.12 ~ 2023.2.22 (약 10일)
-* Contributor : 
+* Contributor
+<a href="https://github.com/taegon98/Hyundai-Mobis_Galloper/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=taegon98/Hyundai-Mobis_Galloper" />
+</a>
+
 ## 2. 서비스 기획 배경 및 목적
 * 도로교통공단의 TAAS 교통사고분석시스템에 따르면, 매년 어린이 교통사고로 인해 만 명 가량의 사상자가 나오고 있다고 한다.<br>
 이에 대한 대응책으로 여러 법안이 개정되는 등 많은 제도적인 개편이 이루어졌다.<br>
