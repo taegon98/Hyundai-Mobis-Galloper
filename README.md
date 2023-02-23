@@ -8,7 +8,7 @@
 ---
 
 ## 2. 프로젝트 진행 기간
-* 멋쟁이사자처럼 X 현대모비스 Mobility SW Hackathon <br>
+* 현대모비스 Mobility SW Hackathon <br>
 * 개발 기간 : 2023.2.12 ~ 2023.2.22 (약 10일) <br>
 * Contributor<br>
 <a href="https://github.com/taegon98/Hyundai-Mobis_Galloper/graphs/contributors">
