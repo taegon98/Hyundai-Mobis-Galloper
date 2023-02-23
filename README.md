@@ -61,3 +61,7 @@
 * H/W : Arduino IDE
 * ERD
 <img src="https://user-images.githubusercontent.com/102223636/220561244-ab2b870e-256d-4bb4-a829-6e69b08f2f00.png" width="350" height="300"/>
+
+---
+## 7. 프로젝트 소감
+ * 이은지: 
