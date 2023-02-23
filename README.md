@@ -80,10 +80,11 @@
     - as608(지문 센서)
     - sw-18010P(충격센서)
 * ERD
-<img src="https://user-images.githubusercontent.com/102223636/220561244-ab2b870e-256d-4bb4-a829-6e69b08f2f00.png" width="350" height="300"/>
+<img src="https://user-images.githubusercontent.com/102223636/220561244-ab2b870e-256d-4bb4-a829-6e69b08f2f![Uploading KakaoTalk_20230223_220422037.png…]()
+00.png" width="350" height="300"/>
 
 ## 8. 프로젝트 소감
-<img src="https://user-images.githubusercontent.com/102223636/220970717-f27f47ea-9c4c-41bd-a37c-bfb9805cf388.png" width="750" height="400"/> <br>
+<img src="https://user-images.githubusercontent.com/102223636/220970931-7c88e7cd-a3e3-47b4-b9c4-1710b568350a.png" width="650" height="300"/> <br>
 
 * 이태곤 : AWS의 lightsail을 이용해서 서버를 배포함으로써 웹과의 통신 뿐만아니라 아두이노 보드와의 통신을 통해 값을 검증하고 클라이언트 화면에  결과 값을 응답해주는 전반적인 하드웨어와 소프트웨어 간의 소통, 협업을 배울 수 있었습니다.
 * 이은지 :
