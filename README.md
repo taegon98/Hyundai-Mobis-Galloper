@@ -15,6 +15,12 @@
 <a href="https://github.com/Leeeeunji/algorithms/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=Leeeeunji/algorithms" />
 </a>
+<a href="https://github.com/Yodayeong/TIL/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Yodayeong/TIL" />
+</a>
+<a href="https://github.com/yoo0221/resume/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=yoo0221/resume" />
+</a>
 
 ## 3. 서비스 기획 배경 및 목적
 * 도로교통공단의 TAAS 교통사고분석시스템에 따르면, 매년 어린이 교통사고로 인해 만 명 가량의 사상자가 나오고 있다고 한다.<br>
@@ -54,7 +60,7 @@
   - IDE : Intellij IDE
 
 * Frontend
-  - React : 5.0.1
+  - React : 18.2.0
   - JavaScript
   - IDE : VScode
 
