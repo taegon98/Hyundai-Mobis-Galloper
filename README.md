@@ -80,8 +80,7 @@
     - as608(지문 센서)
     - sw-18010P(충격센서)
 * ERD
-<img src="https://user-images.githubusercontent.com/102223636/220561244-ab2b870e-256d-4bb4-a829-6e69b08f2f![Uploading KakaoTalk_20230223_220422037.png…]()
-00.png" width="350" height="300"/>
+<img src="https://user-images.githubusercontent.com/102223636/220561244-ab2b870e-256d-4bb4-a829-6e69b08f2f00.png" width="350" height="300"/>
 
 ## 8. 프로젝트 소감
 <img src="https://user-images.githubusercontent.com/102223636/220970931-7c88e7cd-a3e3-47b4-b9c4-1710b568350a.png" width="650" height="300"/> <br>
