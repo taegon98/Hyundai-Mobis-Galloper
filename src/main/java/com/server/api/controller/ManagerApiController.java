@@ -56,6 +56,8 @@ public class ManagerApiController {
         return ResponseEntity.ok().body(memberListResponses);
     }
 
+    @GetMapping("/members/")
+
     @PostMapping("/fpregister/geton/{token}")
     public ResponseEntity getOn(@PathVariable String token) {
         Member member = memberService.findByTokenId(token);

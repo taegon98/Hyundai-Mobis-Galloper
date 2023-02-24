@@ -3,6 +3,7 @@ package com.server.api.controller;
 import com.server.api.ResponseDto;
 import com.server.api.dto.member.MemberSignUpRequest;
 import com.server.api.dto.member.RegisterManagerRequest;
+import com.server.api.dto.member.StatusResponse;
 import com.server.domain.Manager;
 import com.server.domain.Member;
 import com.server.exception.ExistenceException;
@@ -55,5 +56,15 @@ public class MemberApiController {
         memberService.updateMember(userId, findManager);
 
         return ResponseEntity.ok().body(new ResponseDto("관리자 등록이 완료되었습니다."));
+    }
+
+    @GetMapping("/status/{userId}")
+    public ResponseEntity retStatus(@PathVariable String userId) {
+        Member member = memberService.findByUserId(userId);
+
+        if (member == null) {
+            throw new ExistenceException("존재하지 않는 회원입니다.");
+        }
+        return ResponseEntity.ok().body(new StatusResponse(member.isStatus()));
     }
 }

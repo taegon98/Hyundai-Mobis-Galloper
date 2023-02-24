@@ -47,4 +47,6 @@ public class ArduinoController {
         memberService.updateFid(member, request.getFid());  //해당 유저의 fid (지문 값) 업데이트
         return ResponseEntity.ok().body(new ResponseDto("fid 업데이트 완료"));
     }
+
+
 }
