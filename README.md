@@ -53,8 +53,10 @@
 ---
 ## 6. 서비스 화면
 - 시연 순서 : 메인 화면 → 회원가입(학부모, 관리자) → 로그인(학부모, 관리자) → 관리자 등록 → 관리자 페이지 → 승하 화면 → 하차 화면
-1. 메인 화면<<img src="https://user-images.githubusercontent.com/102223636/221101462-85cda464-138d-4775-b32f-7a69b1cf23c5.png" width="350" height="300"/>
-
+1. 메인 화면<br>
+<img src="https://user-images.githubusercontent.com/102223636/221101462-85cda464-138d-4775-b32f-7a69b1cf23c5.png" width="190" height="300"/>
+2. 회원가입 (학부모, 관리자)<br>
+<img src="https://user-images.githubusercontent.com/102223636/221101815-815d12f1-97c1-456f-bd89-6bf6f862f092.png" height="300"/>
 
 
 ---
