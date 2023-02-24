@@ -56,8 +56,8 @@
 1. 메인 화면<br>
 <img src="https://user-images.githubusercontent.com/102223636/221101462-85cda464-138d-4775-b32f-7a69b1cf23c5.png" width="190" height="300"/>
 2. 회원가입 (학부모, 관리자)<br>
-<img src="https://user-images.githubusercontent.com/102223636/221101815-815d12f1-97c1-456f-bd89-6bf6f862f092.png" height="300"/>
-
+<img src="https://user-images.githubusercontent.com/102223636/221101967-1095a632-871f-424d-9be9-81c3e4b72973.png" height="300"/>
+<img src="https://user-images.githubusercontent.com/102223636/221102028-c367d4ee-61c4-416f-b401-bf967efb9e9c.png" height="300"/>
 
 ---
 ## 7. 기대 효과 및 활용 분야
