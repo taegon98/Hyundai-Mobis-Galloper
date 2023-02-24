@@ -52,13 +52,27 @@
   - 버스에 QR코드를 부착하여, 충돌 감지 시에만 해당 QR으로 탑승자 정보를 확인할 수 있도록 하여 구조대원으로 하여금 탑승자 확인을 더욱 용이하게 한다.
 ---
 ## 6. 서비스 화면
-- 시연 순서 : 메인 화면 → 회원가입(학부모, 관리자) → 로그인(학부모, 관리자) → 관리자 등록 → 관리자 페이지 → 승하 화면 → 하차 화면
+- 시연 순서 : 메인 화면 → 회원가입(학부모, 관리자) → 로그인(학부모, 관리자) → 관리자 등록 → 관리자 페이지 → 승하차 화면
 1. 메인 화면<br>
 <img src="https://user-images.githubusercontent.com/102223636/221101462-85cda464-138d-4775-b32f-7a69b1cf23c5.png" width="190" height="300"/>
 2. 회원가입 (학부모, 관리자)<br>
 <p>
 <img src="https://user-images.githubusercontent.com/102223636/221101967-1095a632-871f-424d-9be9-81c3e4b72973.png" height="300"/>
 <img src="https://user-images.githubusercontent.com/102223636/221102028-c367d4ee-61c4-416f-b401-bf967efb9e9c.png" height="300"/>
+</p>
+3. 로그인(학부모, 관리자)
+<p>
+<img src="https://user-images.githubusercontent.com/102223636/221122688-20ec5232-3e19-4154-9154-5468d01a5520.png" height="300"/>
+<img src="https://user-images.githubusercontent.com/102223636/221122833-32e9f8f3-adba-4774-b504-ac2564bd5771.png" height="300"/>
+</p>
+4. 관리자 등록
+<img src="https://user-images.githubusercontent.com/102223636/221122955-70d8deac-b050-485b-aff3-86e4de3e53be.png" height="300"/>
+5. 관리자 페이지
+<img src="https://user-images.githubusercontent.com/102223636/221123121-7c7a4fbd-a7ff-4a78-bb8e-fd21bcc0882a.png" height="300"/>
+6. 승하차 화면
+<p>
+<img src="https://user-images.githubusercontent.com/102223636/221123298-93763eaf-b97b-4364-b4a1-0ca61300f2eb.png" height="300"/>
+<img src="https://user-images.githubusercontent.com/102223636/221123421-bd15c452-a37a-47e7-84e1-58949d4e57bb.png" height="300"/>
 </p>
 
 ---
