@@ -14,15 +14,6 @@
 <a href="https://github.com/taegon98/Hyundai-Mobis_Galloper/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=taegon98/Hyundai-Mobis_Galloper" />
 </a>
-<a href="https://github.com/Leeeeunji/algorithms/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=Leeeeunji/algorithms" />
-</a>
-<a href="https://github.com/Yodayeong/TIL/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=Yodayeong/TIL" />
-</a>
-<a href="https://github.com/yoo0221/resume/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=yoo0221/resume" />
-</a>
 
 ---
 
